@@ -1,11 +1,10 @@
 package br.com.consultemed.model;
 
+import br.com.consultemed.utils.DataUtils;
+
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @SuppressWarnings("serial")
 @NamedQueries({
@@ -15,11 +14,14 @@ import javax.persistence.Table;
 @Entity
 @Table(name="TB_AGENDAMENTOS")
 public class Agendamento extends AbstractEntity<Long> {
-	
+
+	@ManyToOne
 	private Medico medico;
-	
+
+	@ManyToOne
 	private Paciente paciente;
-	
+
+	@Temporal(TemporalType.DATE)
 	private Date dataAgendamento;
 
 	public Medico getMedico() {
@@ -32,6 +34,10 @@ public class Agendamento extends AbstractEntity<Long> {
 
 	public Date getDataAgendamento() {
 		return dataAgendamento;
+	}
+
+	public String getDataAgendamentoFormatado() {
+		return DataUtils.formatarData(dataAgendamento);
 	}
 
 	public void setDataAgendamento(Date dataAgendamento) {

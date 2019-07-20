@@ -55,6 +55,26 @@ public class PacienteDAOImpl implements IPacienteDAO {
         return null;
     }
 
+    public Paciente findByCpf(String cpf) throws Exception {
+        this.factory = emf.createEntityManager();
+        Paciente paciente = new Paciente();
+        try {
+            TypedQuery<Paciente> query = factory.createNamedQuery("Paciente.findByCpf", Paciente.class);
+            query.setParameter("cpf", cpf);
+            paciente = query.getSingleResult();
+            return paciente;
+
+        } catch (Exception e) {
+
+            e.getMessage();
+            this.factory.getTransaction().rollback();
+
+        } finally {
+            factory.close();
+        }
+        return null;
+    }
+
     @Override
     public void deleteById(Long id) throws Exception {
         this.factory = emf.createEntityManager();

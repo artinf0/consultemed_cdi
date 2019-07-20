@@ -1,5 +1,7 @@
 package br.com.consultemed.model;
 
+import br.com.consultemed.utils.DataUtils;
+
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -10,8 +12,10 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-@NamedQueries({@NamedQuery(name = "Paciente.findAllCount", query = "SELECT COUNT(c) FROM Paciente c"),
-        @NamedQuery(name = "Paciente.findAll", query = "SELECT u FROM Paciente u")
+@NamedQueries({
+        @NamedQuery(name = "Paciente.findAllCount", query = "SELECT COUNT(c) FROM Paciente c"),
+        @NamedQuery(name = "Paciente.findAll", query = "SELECT u FROM Paciente u"),
+        @NamedQuery(name = "Paciente.findByCpf", query = "SELECT u FROM Paciente u where u.cpf = :cpf")
 })
 @Entity
 @Table(name = "TB_PACIENTE")
@@ -50,6 +54,10 @@ public class Paciente extends AbstractEntity<Long>  {
 
     public Date getDataNascimento() {
         return dataNascimento;
+    }
+
+    public String getDataNascimentoFormatado() {
+        return DataUtils.formatarData(dataNascimento);
     }
 
     public void setDataNascimento(Date dataNascimento) {
