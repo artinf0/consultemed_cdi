@@ -31,6 +31,10 @@ public class MedicoBusiness {
 	public Medico findById(Long id) throws Exception {
 		return this.dao.findById(id);
 	}
+
+	public Medico findByCrm(String crm) throws Exception {
+		return this.dao.findByCrm(crm);
+	}
 	
 	public void deleteById(Long id) throws Exception {
 		this.dao.deleteById(id);

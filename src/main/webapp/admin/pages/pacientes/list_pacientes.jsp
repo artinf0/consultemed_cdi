@@ -76,7 +76,7 @@
 						<tr>
 							<td>${p.nome == null ? '' : p.nome}</td>
 							<td>${p.cpf == null ? '' : p.cpf}</td>
-							<td>${p.dataNascimento == null ? '' : p.dataNascimento}</td>
+							<td>${p.dataNascimento == null ? '' : p.dataNascimentoFormatado}</td>
 								<td>
 	                        		<a href="${pageContext.request.contextPath}/admin/pacientes?id=${p.id}&action=editar" class="btn btn-sm btn-primary">Editar</a>
 	                        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

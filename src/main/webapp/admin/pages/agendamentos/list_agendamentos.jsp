@@ -66,17 +66,18 @@
                 <table class="table no-margin">
                   <thead>
                   <tr>
-                    <th>Nome</th>
-                    <th>CRM</th>                    
-                    <th>Ações</th>
+                    <th>Médico</th>
+                    <th>Paciente</th>
+                    <th>Data</th>
                   </tr>
                   </thead>
 					<c:forEach var="c" items="${agendamentos}">
 						<tr>
-							<td>${c.nome == null ? '' : c.nome}</td>
-							<td>${c.crm == null ? '' : c.crm}</td>							
+							<td>${c.medico.nome == null ? '' : c.medico.nome}</td>
+							<td>${c.paciente.nome == null ? '' : c.paciente.nome}</td>
+							<td>${c.dataAgendamento == null ? '' : c.dataAgendamentoFormatado}</td>
 								<td>
-	                        		<a href="${pageContext.request.contextPath}/admin/medicos?id=${c.id}&action=editar" class="btn btn-sm btn-primary">Editar</a>
+	                        		<a href="${pageContext.request.contextPath}/admin/agendamentos?id=${c.id}&action=editar" class="btn btn-sm btn-primary">Editar</a>
 	                        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	                        		<button value="Excluir" onclick="setaDadosModal(${c.id});" type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal">Excluir</button>                   
 	                    		</td>
@@ -87,7 +88,7 @@
               </div>
             </div>
             <div class="box-footer clearfix">
-				<a href="${pageContext.request.contextPath}/admin/medicos?action=novo" class="btn btn-sm btn-primary">Novo</a>&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="${pageContext.request.contextPath}/admin/agendamentos?action=novo" class="btn btn-sm btn-primary">Novo</a>&nbsp;&nbsp;&nbsp;&nbsp;
             </div>
           </div>
           
@@ -97,7 +98,7 @@
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content">
 		      <div class="modal-header">
-		        <h5 class="modal-title" id="exampleModalLabel">Excluir Medico</h5>
+		        <h5 class="modal-title" id="exampleModalLabel">Excluir Agendamento</h5>
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 		          <span aria-hidden="true">&times;</span>
 		        </button>
@@ -107,7 +108,7 @@
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-		        <a id="removerMedico" class="btn btn-danger">Deletar</a>
+		        <a id="removerAgendamento" class="btn btn-danger">Deletar</a>
 		      </div>
 		    </div>
 		  </div>
@@ -116,8 +117,8 @@
 		<script type="text/javascript">
 		
 		function setaDadosModal(valor) {
-			var remove = '${pageContext.request.contextPath}/admin/medicos?id='+valor+'&action=delete';
-		    document.getElementById('removerMedico').href = remove;
+			var remove = '${pageContext.request.contextPath}/admin/agendamentos?id='+valor+'&action=delete';
+		    document.getElementById('removerAgendamento').href = remove;
 		}
 	
 	

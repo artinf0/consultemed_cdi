@@ -6,7 +6,9 @@ import javax.persistence.*;
 @SuppressWarnings("serial")
 @NamedQueries({
 	@NamedQuery(name = "Medico.findAllCount", query = "SELECT COUNT(c) FROM Medico c"),
-	@NamedQuery(name="Medico.findAll", query="SELECT c FROM Medico c")})
+	@NamedQuery(name="Medico.findAll", query="SELECT c FROM Medico c"),
+	@NamedQuery(name="Medico.findByCrm", query="SELECT c FROM Medico c where c.crm = :crm")	
+})
 
 @Entity
 @Table(name="TB_MEDICOS")

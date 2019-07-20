@@ -26,6 +26,10 @@ public class PacienteBusiness {
         this.dao.deleteById(id);
     }
 
+    public Paciente findByCpf(String cpf) throws Exception {
+        return this.dao.findByCpf(cpf);
+    }
+
     public Paciente findById(Long id) throws Exception {
         return this.dao.findById(id);
     }

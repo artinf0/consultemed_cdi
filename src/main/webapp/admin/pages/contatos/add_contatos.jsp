@@ -54,7 +54,12 @@
                   <label for="telefone">Telefone</label>
                   <input type="telefone" name="telefone" class="form-control" value="${contato.telefone}" id="telefone" placeholder="Informe o email">
                 </div>
-                
+
+                  <div class="form-group">
+                      <label for="telefone">Telefone</label>
+                      <input type="telefone" name="telefone" class="form-control" value="${contato.telefone}" id="telefone" placeholder="Informe o email">
+                  </div>
+
               </div>
 
               <div class="box-footer">

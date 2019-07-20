@@ -56,6 +56,26 @@ public class MedicoDaoImpl implements IMedicoDao  {
 		return null;
 	}
 
+	public Medico findByCrm(String crm) throws Exception {
+		this.factory = emf.createEntityManager();
+		Medico medico = new Medico();
+		try {
+			TypedQuery<Medico> query = factory.createNamedQuery("Medico.findByCrm", Medico.class);
+			query.setParameter("crm", crm);
+			medico = query.getSingleResult();
+			return medico;
+
+		} catch (Exception e) {
+
+			e.getMessage();
+			this.factory.getTransaction().rollback();
+
+		} finally {
+			factory.close();
+		}
+		return null;
+	}
+
 	@Override
 	public void deleteById(Long id) throws Exception {
 		this.factory = emf.createEntityManager();
