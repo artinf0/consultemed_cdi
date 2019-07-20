@@ -178,7 +178,7 @@ public class UsuarioController extends HttpServlet {
 		
 		if(id != "") {
 			usuario.setId(Long.parseLong(id));
-			request.setAttribute("editado", nome + " " +Constantes.USUARIO_EDITADO);
+			request.setAttribute("editado", nome + " " + Constantes.USUARIO_EDITADO);
 		}else {
 			request.setAttribute("cadastro", nome + " " + Constantes.USUARIO_SUCESSO);			
 		}
@@ -191,5 +191,4 @@ public class UsuarioController extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-
 }
