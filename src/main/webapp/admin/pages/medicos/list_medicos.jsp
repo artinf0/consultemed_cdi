@@ -74,7 +74,7 @@
 					<c:forEach var="c" items="${medicos}">
 						<tr>
 							<td>${c.nome == null ? '' : c.nome}</td>
-							<td>${c.crm == null ? '' : c.crm}</td>							
+							<td>${c.crm == null ? '' : c.crm}</td>
 								<td>
 	                        		<a href="${pageContext.request.contextPath}/admin/medicos?id=${c.id}&action=editar" class="btn btn-sm btn-primary">Editar</a>
 	                        		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

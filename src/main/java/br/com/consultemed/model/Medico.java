@@ -1,9 +1,6 @@
 package br.com.consultemed.model;
 
-import javax.persistence.Entity;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 
 @SuppressWarnings("serial")
@@ -14,7 +11,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name="TB_MEDICOS")
 public class Medico extends AbstractEntity<Long> {
-	
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
 	private String nome;
 	
 	private String crm;

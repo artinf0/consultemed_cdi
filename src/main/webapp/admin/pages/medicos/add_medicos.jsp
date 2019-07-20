@@ -46,8 +46,8 @@
                 </div>
                 
                 <div class="form-group">
-                  <label for="email">CRM</label>
-                  <input type="text" name="crn" class="form-control" value="${medico.crm}" id="nome" placeholder="Informe o crm">
+                  <label for="crm">CRM</label>
+                  <input type="text" name="crm" class="form-control" value="${medico.crm}" id="crm" placeholder="Informe o crm">
                 </div>
                                              
               </div>
