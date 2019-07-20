@@ -30,13 +30,13 @@ public class LoginController extends HttpServlet {
 	private UsuarioBusiness usuarioBusiness;
 	private ContatoBusiness contatoBusiness;
 	private MedicoBusiness medicoBusiness;
-	private PacienteBusiness pacienteBusiness;
+	//private PacienteBusiness pacienteBusiness;
 
 	public LoginController() {
 		this.contatoBusiness = new ContatoBusiness();
 		this.usuarioBusiness = new UsuarioBusiness();
 		this.medicoBusiness = new MedicoBusiness();
-		this.pacienteBusiness = new PacienteBusiness();
+		//this.pacienteBusiness = new PacienteBusiness();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -77,7 +77,7 @@ public class LoginController extends HttpServlet {
             		request.getSession().setAttribute("user", user.getLogin());
             		request.getSession().setAttribute("numContato", this.contatoBusiness.conut());
             		request.getSession().setAttribute("numMedico", this.medicoBusiness.count());
-            		request.getSession().setAttribute("numPaciente", this.pacienteBusiness.count());            		
+            		//request.getSession().setAttribute("numPaciente", this.pacienteBusiness.count());            		
             		RequestDispatcher rd = request.getRequestDispatcher(Constantes.HOME);
             		
             		rd.forward(request, response);
