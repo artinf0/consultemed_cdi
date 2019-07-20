@@ -19,11 +19,8 @@ import javax.persistence.TemporalType;
 })
 @Entity
 @Table(name = "TB_PACIENTE")
-public class Paciente implements Serializable {
+public class Paciente extends AbstractEntity<Long>  {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
-    private Long id;
     private String nome;
     @Column(unique = true)
     private String cpf;
@@ -37,14 +34,6 @@ public class Paciente implements Serializable {
         this.nome = nome;
         this.cpf = cpf;
         this.dataNascimento = dataNascimento;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getNome() {
