@@ -12,10 +12,6 @@ import javax.persistence.*;
 @Table(name="TB_MEDICOS")
 public class Medico extends AbstractEntity<Long> {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-
 	private String nome;
 	
 	private String crm;
