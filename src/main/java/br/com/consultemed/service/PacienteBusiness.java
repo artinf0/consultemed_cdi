@@ -29,4 +29,8 @@ public class PacienteBusiness {
     public Paciente findById(Long id) throws Exception {
         return this.dao.findById(id);
     }
+    
+	public int count() throws Exception {
+		return this.dao.countPaciente();
+	}
 }

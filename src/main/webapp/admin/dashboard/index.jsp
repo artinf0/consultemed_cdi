@@ -48,7 +48,7 @@
 	            <span class="info-box-icon bg-green"><i class="ion ion-ios-people-outline"></i></span>
 	
 	            <div class="info-box-content">
-	              <span class="info-box-text">Agedamentos</span>
+	              <span class="info-box-text">Agendamentos</span>
 	              <span class="info-box-number">${numAgendamento}</span>
 	            </div>
 	          </div>

@@ -115,14 +115,13 @@ public class PacienteDAOImpl implements IPacienteDAO {
     
     @Override
 	public int countPaciente() throws Exception {
-		
-		this.factory = emf.createEntityManager();
-		int numPaciente = 0;
-		
+    	this.factory = emf.createEntityManager();
+		int numMedico = 0;
+
 		try {
 			factory.getTransaction().begin();
-			 numPaciente = ((Number)this.factory.createNamedQuery("Paciente.findAllCount").getSingleResult()).intValue();
-		     System.out.println(numPaciente);
+			numMedico = ((Number)this.factory.createNamedQuery("Paciente.findAllCount").getSingleResult()).intValue();
+			System.out.println(numMedico);
 			factory.getTransaction().commit();
 
 		} catch (Exception e) {
@@ -132,6 +131,6 @@ public class PacienteDAOImpl implements IPacienteDAO {
 			factory.close();
 		}
 
-		return numPaciente;
+		return numMedico;	
 	}
 }

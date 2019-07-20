@@ -18,7 +18,7 @@
 		<nav aria-label="breadcrumb">
 		  <ol class="breadcrumb">
 		    <li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/admin/dashboard">Home</a></li>
-		    <li class="breadcrumb-item active" aria-current="page">Médicos</li>
+		    <li class="breadcrumb-item active" aria-current="page">Agendamentos</li>
 		  </ol>
 		</nav>
 		
@@ -52,7 +52,7 @@
 		 <div class="box box-info">
 		 
             <div class="box-header with-border">
-              <h3 class="box-title">Lista Médicos</h3>
+              <h3 class="box-title">Lista Agendamentos</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -71,7 +71,7 @@
                     <th>Ações</th>
                   </tr>
                   </thead>
-					<c:forEach var="c" items="${medicos}">
+					<c:forEach var="c" items="${agendamentos}">
 						<tr>
 							<td>${c.nome == null ? '' : c.nome}</td>
 							<td>${c.crm == null ? '' : c.crm}</td>							

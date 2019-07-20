@@ -10,9 +10,11 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-@NamedQueries({@NamedQuery(name = "Paciente.findAllCount", query = "SELECT COUNT(c) FROM Paciente c"),
-        @NamedQuery(name = "Paciente.findAll", query = "SELECT u FROM Paciente u")
-})
+@SuppressWarnings("serial")
+@NamedQueries({
+	@NamedQuery(name = "Paciente.findAllCount", query = "SELECT COUNT(c) FROM Paciente c"),
+	@NamedQuery(name="Paciente.findAll", query="SELECT c FROM Paciente c")})
+
 @Entity
 @Table(name = "TB_PACIENTE")
 public class Paciente extends AbstractEntity<Long>  {
