@@ -112,4 +112,26 @@ public class PacienteDAOImpl implements IPacienteDAO {
 
         return usuarios;
     }
+    
+    @Override
+	public int countPaciente() throws Exception {
+		
+		this.factory = emf.createEntityManager();
+		int numPaciente = 0;
+		
+		try {
+			factory.getTransaction().begin();
+			 numPaciente = ((Number)this.factory.createNamedQuery("Paciente.findAllCount").getSingleResult()).intValue();
+		     System.out.println(numPaciente);
+			factory.getTransaction().commit();
+
+		} catch (Exception e) {
+			e.getMessage();
+			this.factory.getTransaction().rollback();
+		} finally {
+			factory.close();
+		}
+
+		return numPaciente;
+	}
 }

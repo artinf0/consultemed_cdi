@@ -1,10 +1,20 @@
 package br.com.consultemed.model;
 
-import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
-@NamedQueries({
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+@NamedQueries({@NamedQuery(name = "Paciente.findAllCount", query = "SELECT COUNT(c) FROM Paciente c"),
         @NamedQuery(name = "Paciente.findAll", query = "SELECT u FROM Paciente u")
 })
 @Entity

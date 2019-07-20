@@ -18,6 +18,8 @@ public class Agendamento extends AbstractEntity<Long> {
 	
 	private Medico medico;
 	
+	private Paciente paciente;
+	
 	private Date dataAgendamento;
 
 	public Medico getMedico() {
@@ -35,7 +37,12 @@ public class Agendamento extends AbstractEntity<Long> {
 	public void setDataAgendamento(Date dataAgendamento) {
 		this.dataAgendamento = dataAgendamento;
 	}
-	
-	
 
+	public Paciente getPaciente() {
+		return paciente;
+	}
+
+	public void setPaciente(Paciente paciente) {
+		this.paciente = paciente;
+	}	
 }
